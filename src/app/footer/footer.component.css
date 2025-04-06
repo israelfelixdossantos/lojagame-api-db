@@ -1,0 +1,18 @@
+/*Rodapé*/
+footer {
+  text-align: center;
+}
+
+footer p {
+  font-weight: bold;
+  padding: 10px;
+}
+
+/*Botão Voltar topo*/
+
+#voltar-topo {
+  position: fixed;
+  bottom: 5px;
+  right: 50px;
+
+}

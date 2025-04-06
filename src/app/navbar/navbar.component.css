@@ -1,0 +1,17 @@
+header{
+    background-color: rgb(62,80,181);
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    
+}
+
+header .navbar-nav .nav-link,
+header .navbar-brand {
+  color: white !important;
+}
+
+header a img{
+    max-width: 70px;
+}
+
