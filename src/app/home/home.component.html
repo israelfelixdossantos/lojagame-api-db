@@ -39,11 +39,11 @@
     <div class="col-md-4" *ngFor="let produto of produtos">
       <div class="card-group">
         <div class="card" style="width: 18rem;">
-          <img src="assets/img/{{produto.foto}}" class="card-img-top" alt="">
+          <img src="{{produto.foto}}" class="card-img-top" alt="">
           <div class="card-body">
             <h5 class="card-title">{{produto.produto}}</h5>
             <p class="card-text">{{produto.descricao}}</p>
-            <p class="preco">{{produto.preco}}</p>
+            <p class="preco">R$ {{produto.preco.toFixed(2)}}</p>
             <a href="#" class="btn btn-primary">Comprar</a>
           </div>
         </div>

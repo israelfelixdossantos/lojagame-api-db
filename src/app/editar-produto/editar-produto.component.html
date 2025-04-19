@@ -1,9 +1,9 @@
 <div class="container mt-4">
     <h2>Editar Produto</h2>
-    <form *ngIf="produto">
+    <form *ngIf="produto" #form="ngForm" (ngSubmit)="editar(produto.id)">
     <div class="mb-3">
         <label class="form-label">ID</label>
-        <input type="text" class="form-control" [(ngModel)]="produto.id" name="produto" readonly>
+        <input type="text" class="form-control" [(ngModel)]="produto.id" name="id" readonly>
         </div>
       <div class="mb-3">
         <label class="form-label">Nome do Produto</label>
@@ -21,7 +21,7 @@
         <label class="form-label">Preço</label>
         <input type="number" class="form-control"  [(ngModel)]="produto.preco" name="preco" required>
       </div>
-      <button type="submit" class="btn btn-success" (click)="editar(produto.id)">Atualizar</button>
+      <button type="submit" class="btn btn-success" [disabled]="!form.valid" >Atualizar</button>
       <a routerLink="/listar-produtos" class="btn btn-secondary">Cancelar</a>
     </form>
   </div>

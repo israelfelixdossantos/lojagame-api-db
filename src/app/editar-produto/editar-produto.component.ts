@@ -23,7 +23,7 @@ export class EditarProdutoComponent implements OnInit {
       this.produtoId = params['id'];
 
       this._produtoService.getProduto(this.produtoId).subscribe(produto => {
-        // Ajusta o ID se o backend envia como _id
+        console.log('Produto recebido do backend:', produto);
         if ((produto as any)._id) {
           produto.id = (produto as any)._id;
         }
