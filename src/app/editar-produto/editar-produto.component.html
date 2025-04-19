@@ -1,0 +1,28 @@
+<div class="container mt-4">
+    <h2>Editar Produto</h2>
+    <form *ngIf="produto">
+    <div class="mb-3">
+        <label class="form-label">ID</label>
+        <input type="text" class="form-control" [(ngModel)]="produto.id" name="produto" readonly>
+        </div>
+      <div class="mb-3">
+        <label class="form-label">Nome do Produto</label>
+        <input type="text" class="form-control" [(ngModel)]="produto.produto" name="produto" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Descrição</label>
+        <textarea class="form-control"  [(ngModel)]="produto.descricao" name="descricao" required></textarea>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Foto (Nome do Arquivo)</label>
+        <input type="text" class="form-control"  [(ngModel)]="produto.foto" name="foto" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Preço</label>
+        <input type="number" class="form-control"  [(ngModel)]="produto.preco" name="preco" required>
+      </div>
+      <button type="submit" class="btn btn-success" (click)="editar(produto.id)">Atualizar</button>
+      <a routerLink="/listar-produtos" class="btn btn-secondary">Cancelar</a>
+    </form>
+  </div>
+  

@@ -4,11 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
+import { ListarProdutoComponent } from './listar-produto/listar-produto.component';
+import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 
 const routes: Routes = [
   {path:'home', component: HomeComponent},
   {path:'login', component: LoginComponent},
   {path:'cadastrar-produto', component: CadastrarProdutoComponent},
+  {path:'listar-produtos', component: ListarProdutoComponent},
+  {path:'editar-produtos/:id', component: EditarProdutoComponent},
   {path:'', redirectTo: '/home', pathMatch: 'full'}
 ];
 

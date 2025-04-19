@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./cadastrar-produto.component.css']
 })
 export class CadastrarProdutoComponent {
-  public produto : Produto = new Produto(0, '', '', '', 0);
+  public produto : Produto = new Produto('', '', '', '', 0);
     constructor(
       private _produtoService: ProdutoService,
       private _router: Router
@@ -18,7 +18,7 @@ export class CadastrarProdutoComponent {
     cadastrar(): void {
       this._produtoService.cadastrarProduto(this.produto).subscribe(
         (produto) => {
-          this.produto = new Produto(0, '', '', '', 0);
+          this.produto = new Produto('', '', '', '', 0);
           alert('Cadastro Efetuado com sucesso');
         },(err) => {alert('Erro ao Cadastrar');}
       );

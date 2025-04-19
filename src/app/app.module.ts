@@ -15,6 +15,9 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
+import { ListarProdutoComponent } from './listar-produto/listar-produto.component';
+import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
+
 
 
 
@@ -26,7 +29,9 @@ import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto
     HomeComponent,
     FooterComponent,
     LoginComponent,
-    CadastrarProdutoComponent
+    CadastrarProdutoComponent,    
+    ListarProdutoComponent, 
+    EditarProdutoComponent, 
   ],
   imports: [
     BrowserModule, 

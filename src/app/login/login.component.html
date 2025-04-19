@@ -28,24 +28,24 @@
     <p>Informe os seus dados abaixo para criar sua conta.</p>
 
     <div class="d-flex justify-content-center">
-      <form method="post" action="" id="cadastro-form">
+      <form (ngSubmit)="cadastrar()">
         <p>
-          <label for="usuario">Usuário: </label>
-          <input id="usuario" name="usuario" required type="text" placeholder="ex. nome de usuário"
+          <label for="nome-usuario">Usuário: </label>
+          <input id="usuario" name="usuario" [(ngModel)]="usuario.nome" required type="text" placeholder="ex. nome de usuário"
             class="form-control" />
         </p>
         <p>
           <label for="email">E-mail: </label>
-          <input id="email" name="email" required type="email" placeholder="seu@email.com.br"
+          <input id="email" name="email" [(ngModel)]="usuario.email" required type="email" placeholder="seu@email.com.br"
             class="form-control" />
         </p>
         <p>
           <label for="senha">Senha: </label>
-          <input id="senha" name="senha" required type="password" placeholder="mínimo de 6 caracteres"
+          <input id="senha" name="senha" [(ngModel)]="usuario.senha" required type="password" placeholder="mínimo de 6 caracteres"
             class="form-control" />
         </p>
         <p>
-          <input type="button" value="Cadastrar" class="btn btn-primary" id="bt-cadastrar" onclick="cadastro()" />
+          <input type="submit" value="Cadastrar" class="btn btn-primary" id="bt-cadastrar"  />
         </p>
       </form>
     </div>
