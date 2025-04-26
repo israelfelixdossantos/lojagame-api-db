@@ -6,20 +6,30 @@ require("./models/Produto")
 const Produto = mongoose.model("Produto")
 require("./models/Usuario")
 const Usuario = mongoose.model("Usuario")
+// const flash = require("connect-flash");
+const session = require("express-session");
+const bcrypt = require("bcryptjs");
+
+const passport = require("passport")
+require("./config/auth")(passport)
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use(
+  session({
+    secret: "chave-lhGames",
+    resave: true,
+    saveUninitialized: true,
+  })
+)
+
+app.use(passport.initialize())
+app.use(passport.session())
+// app.use(flash());
 
 // mongoose
-//   .connect("mongodb://localhost:27017/lh-gamer", {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   })
-//   .then(() => console.log("Conectado ao MongoDB"))
-//   .catch((err) => console.error("Erro ao conectar no MongoDB:", err));
-
   mongoose
   .connect("mongodb+srv://grrifs:5FEcHEXNGNXc5xSH@cluster0.w29uqxu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", {
     useNewUrlParser: true,
@@ -42,10 +52,38 @@ app.post("/produtos", async (req, res) => {
   res.status(201).json(nova);
 });
 
+// app.post("/usuarios", async (req, res) => {
+//   const novoUsuario = new Usuario(req.body);
+//   await novoUsuario.save();
+//   res.status(201).json(novoUsuario);
+// });
 app.post("/usuarios", async (req, res) => {
-  const novoUsuario = new Usuario(req.body);
-  await novoUsuario.save();
-  res.status(201).json(novoUsuario);
+  const { nome, email, senha } = req.body;
+
+  try {
+    // Verifica se já existe usuário
+    const usuarioExistente = await Usuario.findOne({ email });
+    if (usuarioExistente) {
+      return res.status(400).json({ message: "Usuário já cadastrado." });
+    }
+
+    // Criptografa a senha
+    const salt = await bcrypt.genSalt(10);
+    const senhaHash = await bcrypt.hash(senha, salt);
+
+    // Cria o novo usuário
+    const novoUsuario = new Usuario({
+      nome,
+      email,
+      senha: senhaHash
+    });
+
+    await novoUsuario.save();
+    res.status(201).json({ message: "Usuário cadastrado com sucesso!" });
+  } catch (err) {
+    console.error("Erro ao cadastrar usuário:", err);
+    res.status(500).json({ message: "Erro ao cadastrar usuário." });
+  }
 });
 
 //rota GET para buscar um produto pelo ID

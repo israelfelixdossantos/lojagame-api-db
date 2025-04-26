@@ -132,12 +132,20 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 
-import { HomeComponent } from &#x27;./home/home.component&#x27;;
-import { LoginComponent } from &#x27;./login/login.component&#x27;;
+import { HomeComponent } from &#x27;./public/home/home.component&#x27;;
+import { LoginComponent } from &#x27;./public/login/login.component&#x27;;
+import { CadastrarProdutoComponent } from &#x27;./admin/cadastrar-produto/cadastrar-produto.component&#x27;;
+import { ListarProdutoComponent } from &#x27;./admin/listar-produto/listar-produto.component&#x27;;
+import { EditarProdutoComponent } from &#x27;./admin/editar-produto/editar-produto.component&#x27;;
+import { PaginaProdutoComponent } from &#x27;./public/pagina-produto/pagina-produto.component&#x27;;
 
 const routes: Routes &#x3D; [
   {path:&#x27;home&#x27;, component: HomeComponent},
   {path:&#x27;login&#x27;, component: LoginComponent},
+  {path:&#x27;cadastrar-produto&#x27;, component: CadastrarProdutoComponent},
+  {path:&#x27;listar-produtos&#x27;, component: ListarProdutoComponent},
+  {path:&#x27;editar-produtos/:id&#x27;, component: EditarProdutoComponent},
+  {path:&#x27;pagina-produto/:id&#x27;, component: PaginaProdutoComponent},
   {path:&#x27;&#x27;, redirectTo: &#x27;/home&#x27;, pathMatch: &#x27;full&#x27;}
 ];
 

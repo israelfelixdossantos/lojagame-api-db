@@ -1,0 +1,33 @@
+<!-- Seção central com imagem + card -->
+<div class="container min-vh-100 d-flex justify-content-center align-items-center" *ngIf="produto">
+    <div class="row w-100 align-items-center justify-content-center">
+      <!-- Imagem do Produto -->
+      <div class="col-md-5 text-center mb-4 mb-md-0">
+        <img [src]="produto.foto" alt="{{produto.produto}}" class="img-fluid rounded"
+          style="max-width: 600px; height: auto;">
+      </div>
+  
+      <!-- Card com Informações do Produto -->
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body text-end">
+            <h2 class="card-title mb-3">{{produto.produto}}</h2>
+            <h4 class="text-success mb-4">R$ {{produto.preco.toFixed(2)}}</h4>
+            <button type="button" class="btn btn-dark btn-lg w-100">Comprar</button>
+            <button type="button" class="btn btn-success btn-lg w-100 mt-2">Adicionar ao carrinho</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Seção separada para a descrição -->
+  <div class="container mt-5" *ngIf="produto">
+    <div class="row">
+      <div class="col">
+        <h4 class="mb-3">Descrição do Produto</h4>
+        <p class="text-muted">{{produto.descricao}}</p>
+      </div>
+    </div>
+  </div>
+  

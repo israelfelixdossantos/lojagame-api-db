@@ -4,14 +4,14 @@ import { Compra } from './Compra.model';
 export class Usuario {
   nome: string;
   email: string;
-  senha: number;
+  senha: string;
   carrinho: ItemCarrinho[];
   compras: Compra[];
 
   constructor(
     nome: string,
     email: string,
-    senha: number,
+    senha: string,
     carrinho: ItemCarrinho[],
     compras: Compra[]
   ) {

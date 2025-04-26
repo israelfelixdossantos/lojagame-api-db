@@ -120,7 +120,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/footer/footer.component.ts</code>
+    <code>src/app/shared/components/footer/footer.component.ts</code>
 </p>
 
 
@@ -174,13 +174,82 @@
     </table>
 </section>
 
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#topo" >topo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
 
 
 
 
 
 
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="topo"></a>
+                    <span class="name">
+                        <span ><b>topo</b></span>
+                        <a href="#topo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>topo()</code>
+                </td>
+            </tr>
 
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="10"
+                                    class="link-to-prism">src/app/shared/components/footer/footer.component.ts:10</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
 
 </div>
 
@@ -195,38 +264,61 @@
 })
 export class FooterComponent {
 
+  topo() {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: &quot;smooth&quot;,
+    });
+  }
+
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;footer class&#x3D;&quot;fixed-bottom text-center bg-light py-2&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;footer&gt;
     &lt;p&gt;Desnvolvido por LH Games&lt;/p&gt;
-  &lt;/footer&gt;
+&lt;/footer&gt;
 
-  &lt;button id&#x3D;&quot;voltar-topo&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-primary&quot; onclick&#x3D;&quot;topo()&quot;&gt;&amp;uarr; Voltar ao topo&lt;/button&gt;</code></pre>
+&lt;button id&#x3D;&quot;voltar-topo&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn &quot; (click)&#x3D;&quot;topo()&quot;&gt;
+  &lt;img src&#x3D;&quot;assets/img/seta-para-cima.png&quot; alt&#x3D;&quot;&quot;&gt;
+&lt;/button&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="styleData">
                 <p class="comment">
                     <code>./footer.component.css</code>
                 </p>
-                <pre class="line-numbers"><code class="language-scss">/*Rodapé*/
-footer {
-  text-align: center;
+                <pre class="line-numbers"><code class="language-scss">footer {
+  background-color: rgb(62, 80, 181);
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: auto;
 }
 
 footer p {
   font-weight: bold;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 /*Botão Voltar topo*/
 
 #voltar-topo {
   position: fixed;
-  bottom: 5px;
-  right: 50px;
+  bottom: 10px;
+  right: 30px;
+  border: solid 2px #88c057;
+  border-radius: 10px
+}
+
+#voltar-topo img{
+  width: 30px;
 
 }
 </code></pre>
@@ -257,8 +349,8 @@ footer p {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><footer class="fixed-bottom text-center bg-light py-2">    <p>Desnvolvido por LH Games</p>  </footer>  <button id="voltar-topo" type="button" class="btn btn-outline-primary" onclick="topo()">&uarr; Voltar ao topo</button></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'}];
+        var COMPONENT_TEMPLATE = '<div><footer>    <p>Desnvolvido por LH Games</p></footer><button id="voltar-topo" type="button" class="btn " (click)="topo()">  <img src="assets/img/seta-para-cima.png" alt=""></button></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CadastrarProdutoComponent', 'selector': 'app-cadastrar-produto'},{'name': 'EditarProdutoComponent', 'selector': 'app-editar-produto'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'ListarProdutoComponent', 'selector': 'app-listar-produto'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PaginaProdutoComponent', 'selector': 'app-pagina-produto'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FooterComponent'};
 </script>

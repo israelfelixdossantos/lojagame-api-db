@@ -23,6 +23,7 @@
     "bootstrap": "^5.3.5",
     "cors": "^2.8.5",
     "jquery": "^3.7.1",
+    "passport-auth0": "^1.4.4",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"

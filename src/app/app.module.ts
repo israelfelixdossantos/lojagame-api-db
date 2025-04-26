@@ -11,13 +11,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HomeComponent } from './home/home.component';
-import { FooterComponent } from './footer/footer.component';
-import { LoginComponent } from './login/login.component';
-import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
-import { ListarProdutoComponent } from './listar-produto/listar-produto.component';
-import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { HomeComponent } from './public/home/home.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { LoginComponent } from './public/login/login.component';
+import { CadastrarProdutoComponent } from './admin/cadastrar-produto/cadastrar-produto.component';
+import { ListarProdutoComponent } from './admin/listar-produto/listar-produto.component';
+import { EditarProdutoComponent } from './admin/editar-produto/editar-produto.component';
+import { PaginaProdutoComponent } from './public/pagina-produto/pagina-produto.component';
 
 
 
@@ -32,7 +33,7 @@ import { EditarProdutoComponent } from './editar-produto/editar-produto.componen
     LoginComponent,
     CadastrarProdutoComponent,    
     ListarProdutoComponent, 
-    EditarProdutoComponent, 
+    EditarProdutoComponent, PaginaProdutoComponent, 
   ],
   imports: [
     BrowserModule, 

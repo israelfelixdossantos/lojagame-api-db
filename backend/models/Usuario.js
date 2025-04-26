@@ -18,7 +18,7 @@ const CompraSchema = new mongoose.Schema({
 const UsuarioSchema = new mongoose.Schema({
   nome: { type: String, required: true },
   email: { type: String, required: true, unique: true },
-  senha: { type: Number, required: true }, 
+  senha: { type: String, required: true }, 
   eAdmin: { type: Number, default: 0 },
   carrinho: [ItemCarrinhoSchema],
   compras: [CompraSchema]
